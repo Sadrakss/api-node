@@ -10,13 +10,16 @@ const router = express.Router()
 // connect db
 mongoose.connect('mongodb+srv://api:api@dbs-5o4eu.mongodb.net/test?retryWrites=true&w=majority', {
     useUnifiedTopology: true,
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useCreateIndex: true
 }).then(() => {
     console.log('connected to mongodb')
 }).catch((err) => {
     console.log('connection error!' + err)
 })
 
+// loads models
+const Prodct = require('./models/product')
 
 // loads the routes
 const indexRoute = require('./routes/index-route')
