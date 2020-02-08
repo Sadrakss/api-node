@@ -11,7 +11,8 @@ const router = express.Router()
 mongoose.connect('mongodb+srv://api:api@dbs-5o4eu.mongodb.net/test?retryWrites=true&w=majority', {
     useUnifiedTopology: true,
     useNewUrlParser: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
 }).then(() => {
     console.log('connected to mongodb')
 }).catch((err) => {
